@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background"
+    android:gravity="center_horizontal"
+    >
+
+    <LinearLayout android:layout_width="fill_parent" android:id="@+id/logoContainer" android:layout_height="wrap_content" android:gravity="center_vertical|center_horizontal">
+    	<TextView android:textColor="#D68C15" android:layout_width="wrap_content" android:id="@+id/textGluten" android:layout_height="wrap_content" android:text="@string/gluten" android:textSize="40sp" android:textAppearance="?android:attr/textAppearanceLarge"></TextView>
+    	<TextView android:textColor="#ffffff" android:layout_width="wrap_content" android:id="@+id/textFree" android:layout_height="wrap_content" android:text="@string/free" android:textSize="40sp" android:textAppearance="?android:attr/textAppearanceLarge"></TextView>
+    </LinearLayout>
+    <RelativeLayout android:layout_width="fill_parent" android:id="@+id/searchContainer" android:layout_height="wrap_content">
+        <EditText android:layout_height="wrap_content"  android:layout_alignParentLeft="true" android:layout_alignParentTop="true" android:id="@+id/searchText" android:layout_width="fill_parent" android:layout_marginRight="50dp"></EditText>
+        <Button android:layout_height="wrap_content" android:drawableLeft="@drawable/ic_btn_search" android:layout_alignParentTop="true" android:layout_width="wrap_content" android:id="@+id/searchButton" android:layout_alignParentRight="true"></Button>
+        <Spinner android:id="@+id/spinner" android:entries="@array/categories" android:layout_below="@+id/searchText" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_width="fill_parent"></Spinner>
+    </RelativeLayout>
+
+	<RelativeLayout android:id="@+id/barcodeButtonContainer" android:layout_width="fill_parent" android:gravity="center_vertical|center_horizontal" android:layout_weight="1"  android:layout_height="fill_parent">
+		<Button android:onClick="scanBarcodes" android:layout_height="wrap_content" android:paddingLeft="7dp" android:paddingRight="14dp" android:paddingTop="3dp" android:paddingBottom="5dp" android:drawableLeft="@drawable/ic_menu_barcode" android:layout_alignParentTop="true" android:layout_width="wrap_content" android:id="@+id/barcodeButton" android:layout_alignParentRight="true" android:text="@string/scan_barcode"></Button>
+    </RelativeLayout>
+    <RelativeLayout android:layout_width="fill_parent" android:id="@+id/adContainer" android:gravity="bottom|center_horizontal" android:layout_weight="1" android:layout_height="fill_parent">
+    </RelativeLayout>
+</LinearLayout>

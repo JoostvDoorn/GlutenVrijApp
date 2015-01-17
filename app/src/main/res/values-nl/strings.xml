@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Glutenvrij</string>
+    <string name="glutenvrij">GlutenVrij</string>
+    <string name="search_instruction">Zoek op artikelnaam, producent/winkel of soort.</string>
+    <string name="gluten">Gluten</string>
+    <string name="free">Vrij</string>
+    <string name="scan_barcode">Scan Barcode</string>
+    <string name="msg_default_format">Formaat</string>
+    <string name="msg_default_type">Type</string>
+    <string name="msg_default_time">Tijd</string>
+    <string name="msg_default_meta">Metadata</string>
+    <string name="msg_default_status">Plaats een barcode binnen de rechthoek om hem te scannen.</string>
+    <string name="msg_camera_framework_bug">Sorry, de Android camera werkt niet goed. Misschien moet u uw apparaat opnieuw opstarten.</string>
+    <string name="button_ok">OK</string>
+    <string name="preferences_allergies_title">Ik mag geen\u2026</string>
+    <string name="preferences_allergic_to_lactose">Lactose</string>
+    <string name="preferences_allergic_to_wheatstarch">Tarwezetmeel</string>
+    <string name="preferences_actions_title">Wanneer een barcode is gevonden\u2026</string>
+    <string name="preferences_copy_to_clipboard_title">Copy to clipboard</string>
+    <string name="preferences_front_light_summary">Inschakelen van achtergrondlicht, indien beschikbaar. Dit kan in sommige gevallen leiden tot slechte herkenning van barcodes. Werkt niet op alle telefoons.</string>
+    <string name="preferences_front_light_title">Achtergrondlicht</string>
+    <string name="preferences_general_title">Basisinstellingen</string>
+    <string name="preferences_name">Instellingen</string>
+    <string name="preferences_play_beep_title">Piepen</string>
+    <string name="preferences_reverse_image_summary">Staat op apparaten met een camera aan de voorkant alleen</string>
+    <string name="preferences_reverse_image_title">Omgekeerd beeld van de camera</string>
+    <string name="preferences_vibrate_title">Trillen</string>
+    <string name="zxing_url">http://code.google.com/p/zxing</string>
+    <string name="menu_settings">Instellingen</string>
+    <string name="menu_help">Help</string>
+    <string name="menu_about">Over</string>
+    <string name="searching">Bezig met zoeken</string>
+    <string name="dots">...</string>
+    <string name="cancel">Cancel</string>
+    <string name="lactosefree">Lactosevrij</string>
+    <string name="lactose_contains">Bevat lactose</string>
+    <string name="lactose_no_data">Bevat mogelijk lactose</string>
+    <string name="starchfree">Tarwezetmeel vrij</string>
+    <string name="starch_contains">Bevat tarwezetmeel</string>
+    <string name="starch_no_data">Bevat mogelijk tarwezetmeel</string>
+    <string name="barcode_not_found">Barcode niet gevonden, product kan gluten bevatten. Lees a.u.b. de ingrediëntendeclaratie.</string>
+    <string name="did_you_mean">Bedoelde u?</string>
+    <string name="showing_results">Resultaten voor:</string>
+    <string name="no_results">Geen producten gevonden</string>
+    <string name="no_results_help">We konden geen glutenvrijeproducten vinden met uw zoekterm. Dit kan betekenen dat het product niet glutenvrij is, lees de ingrediëntendeclaratie op het product voor meer informatie of neem contact op met de producent.</string>
+    <string-array name="categories">
+        <item>Artikelnaam</item>
+        <item>Ean nummer</item>
+        <item>Producent/winkel</item>
+        <item>Soort</item>
+        <item>Artikelnaam + producent</item>
+        <item>Soort + producent</item>
+        <item>Artikelnaam + soort</item>
+        <item>DLC</item>
+    </string-array>
+    <string name="connection_error">Geen verbinding</string>
+    <string name="connection_error_help">Kon geen verbinding maken met de server, dit kan betekenen dat de server offline is of dat de telefoon geen verbinding heeft met het internet.</string>
+    <string name="ean">EAN:</string>
+    <string name="store">Producent/winkel:</string>
+    <string name="unknown">onbekend</string>
+    <string name="category">Soort:</string>
+    <string name="contamination">Besmettingsgevaar:</string>
+    <string name="result_product_allowed">Op basis van je instellingen mag je dit product hebben.</string>
+    <string name="edit_settings">Instellingen aanpassen</string>
+    <string name="lactose">Lactose:</string>
+    <string name="starch">Tarwezetmeel:</string>
+    <string name="result_is_glutenfree">Dit product is glutenvrij.</string>
+    <string-array name="contamination_risk">
+        <item>Geen besmetting</item>
+        <item>Glutenvrij (hoeveelheid gluten onder 20ppm)</item>
+        <item>Product bevat maltodextrine of glucose-/dextrosestroop uit tarwe of gerst</item>
+        <item>Kan sporen van gluten bevatten.</item>
+        <item>Met zeer laag glutengehalte (hoeveelheid gluten ligt tusssen 20ppm en 100ppm)</item>
+        <item>Kans op besmetting onbekend</item>
+        <item>Bevat (waarschijnlijk) sporen van gluten</item>
+        <item>Product is glutenvrij maar bevat gluten onder de wettelijke grens van 200 ppm</item>
+        <item>Informatie fabrikant is onbetrouwbaar</item>
+        <item>Kan sporen van lactose bevatten</item>
+    </string-array>
+    <string name="last_updated">Voor het laatst geupdate</string>
+    <string-array name="source">
+        <item></item>
+        <item>Informatie verkregen via e-mail van fabrikant.</item>
+        <item>Informatie verkregen fax naar fabrikant.</item>
+        <item>Informatie verkregen via toegezonden lijst van fabrikant.</item>
+        <item>Informatie verkregen via telefoon.</item>
+        <item>Informatie verkregen van verpakking.</item>
+        <item>Informatie verkregen via website van de fabrikant.</item>
+        <item>Informatie verkregen via nieuwsgroepen.</item>
+    </string-array>
+    <string name="title_about">GlutenVrij v</string>
+    <string name="msg_about">GlutenVrij is een onofficiële applicatie voor www.livaad.nl\n\nGemaakt door Joost van Doorn met hulp van Thomas Neele.\n\nDe barcode scanner is open source, voor meer informatie zie het ZXing project:</string>
+    <string name="disclaimer">Deze applicatie doorzoekt www.livaad.nl om te bepalen of een product glutenvrij is. Livaad wordt bijgehouden door vrijwilligers en niet door de producenten! Kijk daarom bij twijfel ook altijd op de verpakking.</string>
+</resources>

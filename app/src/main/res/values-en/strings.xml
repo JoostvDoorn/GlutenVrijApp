@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Glutenfree</string>
+    <string name="glutenvrij">GlutenFree</string>
+    <string name="search_instruction">Search for article name, brand or type.</string>
+    <string name="gluten">Gluten</string>
+    <string name="free">Free</string>
+    <string name="scan_barcode">Scan Barcode</string>
+    <string name="msg_bulk_mode_scanned">Bulk mode: barcode scanned and saved</string>
+  <string name="msg_default_format">Format</string>
+  <string name="msg_default_type">Type</string><string name="barcode_not_found">Barcode not found, product might contain gluten. Please read ingredients!</string><string name="did_you_mean">Did you mean?</string>
+  <string name="msg_default_time">Time</string>
+  <string name="msg_default_meta">Metadata</string>
+  <string name="button_google_shopper">Google Shopper</string>
+  <string name="msg_default_status">Place a barcode inside the viewfinder rectangle to scan it.</string>
+  <string name="msg_camera_framework_bug">Sorry, the Android camera encountered a problem. You may need to restart the device.</string>
+  <string name="button_ok">OK</string>
+    <string name="showing_results">Results for:</string>
+    <string name="no_results">No results found</string>
+    <string name="no_results_help">We could not find any gluten free products with your search term. This could mean the product contains gluten as we only search for gluten free products, read the ingredients on the packaging or contact the supplier for more information.</string>
+    <string name="connection_error">Connection error</string>
+    <string name="connection_error_help">Could not connect to the server, this could mean the server is offline or your internet connection is experiencing problems.</string>
+    <string name="ean">EAN:</string>
+    <string name="result_product_allowed">On the basis of your settings you can eat this product.</string>
+    <string name="lactose">Lactose:</string>
+    <string name="title_about">GlutenVrij v</string>
+
+    <string name="preferences_allergies_title">I cannot eat\u2026</string>
+  <string name="preferences_allergic_to_lactose">Lactose</string>
+  <string name="preferences_allergic_to_wheatstarch">Wheat starch</string>
+  <string name="preferences_actions_title">When a barcode is found\u2026</string>
+  <string name="preferences_bulk_mode_summary">Scan and save many barcodes continuously</string>
+  <string name="preferences_bulk_mode_title">Bulk scan mode</string>
+  <string name="preferences_copy_to_clipboard_title">Copy to clipboard</string>
+  <string name="preferences_front_light_summary">Improves scanning in low light on some phones, but may cause glare. Does not work on all phones.</string>
+  <string name="preferences_front_light_title">Use front light</string>
+  <string name="preferences_general_title">General settings</string>
+  <string name="preferences_name">Settings</string>
+  <string name="preferences_play_beep_title">Beep</string>
+  <string name="preferences_reverse_image_summary">Enable on devices with a front camera only</string>
+  <string name="preferences_reverse_image_title">Reversed camera image</string>
+  <string name="preferences_scanning_title">When scanning for barcodes, decode\u2026</string>
+  <string name="preferences_vibrate_title">Vibrate</string>
+  <string name="zxing_url">http://code.google.com/p/zxing</string><string name="last_updated">Last updated</string>
+  <string name="menu_settings">Settings</string>
+  <string name="menu_help">Help</string><string-array name="categories">
+      <item>Article name</item>
+      <item>Ean number</item>
+      <item>Brand/store</item>
+      <item>Type</item>
+      <item>Article name + brand</item>
+      <item>Type + brand</item>
+      <item>Article name + type</item>
+      <item>DLC</item>
+  </string-array>
+  <string-array name="contamination_risk">
+      <item>No contamination</item>
+      <item>Glutenfree (amount of gluten under 20ppm)</item>
+      <item>Product contains maltodextrine/glucose derived from wheat</item>
+      <item>Very small chance on contamination.</item>
+      <item>Very low amount of gluten (between 20ppm and 100ppm)</item>
+      <item>unknown</item>
+      <item>Product may contain traces of gluten</item>
+      <item>Contains gluten however below 200 ppm</item>
+      <item>Information unreliable</item>
+      <item>Product may contain traces of lactose</item>
+  </string-array> 
+  <string name="menu_about">About</string>
+  <string name="searching">Searching products</string>
+  <string name="dots">...</string>
+  <string name="cancel">Cancel</string>
+  <string name="lactosefree">No lactose</string><string name="lactose_contains">Contains lactose</string><string name="lactose_no_data">May contain lactose</string><string name="starchfree">No wheatstarch</string><string name="starch_contains">Contains wheatstarch</string><string name="starch_no_data">May contain wheatstarch</string>
+  <string name="unknown">unknown</string>
+  <string name="category">Type:</string>
+  <string name="store">Brand/store:</string>
+  <string name="contamination">Contamination danger:</string>
+  <string name="edit_settings">Edit settings</string>
+  <string name="result_is_glutenfree">This product is glutenfree.</string>
+  <string name="starch">Starch:</string>
+  <string-array name="source">
+  		<item></item>
+  		<item>Informatie verkregen via e-mail van fabrikant.</item>
+  		<item>Informatie verkregen fax naar fabrikant.</item>
+  		<item>Informatie verkregen via toegezonden lijst van fabrikant.</item>
+  		<item>Informatie verkregen via telefoon.</item>
+  		<item>Informatie verkregen van verpakking.</item>
+  		<item>Informatie verkregen via website van de fabrikant.</item>
+  		<item>Informatie verkregen via nieuwsgroepen.</item>  		
+  </string-array>
+  <string name="msg_about">GlutenVrij is an unofficial application for www.livaad.nl\n\nMade by Joost van Doorn with help of Thomas Neele.\n\nThe barcode scanner is open source, for more information see the ZXing project:</string>
+  <string name="disclaimer">This application searches www.livaad.nl te determine whether or not a product is gluten free. Livaad is updated by volunteers and not by the producers themselves! Therefor, when in doubt read the ingredients declaration.</string>
+</resources>

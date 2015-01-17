@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background"
+    >
+    <LinearLayout android:gravity="center_horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingBottom="5dp">
+    	<TextView android:gravity="center_horizontal" android:textSize="19sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:textColor="#FFFFFF" android:id="@+id/productName"></TextView>
+	</LinearLayout>
+    <ScrollView android:layout_height="fill_parent" android:layout_width="fill_parent">
+        <LinearLayout android:id="@+id/linearLayout1" android:layout_width="fill_parent" android:orientation="vertical" android:layout_height="fill_parent">
+	       <LinearLayout android:layout_marginTop="16dp" android:layout_marginLeft="25dp" android:layout_marginRight="25dp" android:padding="2dp" android:layout_width="fill_parent" android:layout_height="wrap_content">
+	            <LinearLayout android:layout_width="0dip" android:layout_weight="1" android:layout_height="fill_parent">
+	            	<TextView android:textColor="#FFFFFF" android:gravity="bottom" android:textSize="12sp" android:text="@+string/result_is_glutenfree" android:layout_width="fill_parent" android:layout_height="fill_parent"></TextView>
+	        	</LinearLayout>
+        	</LinearLayout>
+	       <LinearLayout android:orientation="vertical" android:layout_marginTop="16dp" android:layout_marginLeft="25dp" android:layout_marginRight="25dp" android:padding="2dp" android:layout_width="fill_parent" android:layout_height="wrap_content">
+	            <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+	            	<TextView android:textColor="#D68C15" android:gravity="bottom" android:textSize="12sp" android:text="@+string/lactose" android:layout_width="fill_parent" android:layout_height="fill_parent"></TextView>
+	        	</LinearLayout>
+	        	<LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+	            	<TextView android:id="@+id/lactose" android:textColor="#FFFFFF" android:textSize="18sp" android:layout_width="fill_parent" android:layout_height="fill_parent"></TextView>
+	        	</LinearLayout>
+        	</LinearLayout>
+	       <LinearLayout android:orientation="vertical" android:layout_marginTop="16dp" android:layout_marginLeft="25dp" android:layout_marginRight="25dp" android:padding="2dp" android:layout_width="fill_parent" android:layout_height="wrap_content">
+	            <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+	            	<TextView android:textColor="#D68C15" android:gravity="bottom" android:textSize="12sp" android:text="@+string/starch" android:layout_width="fill_parent" android:layout_height="fill_parent"></TextView>
+	        	</LinearLayout>
+	        	<LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+	            	<TextView android:id="@+id/starch" android:textColor="#FFFFFF" android:textSize="18sp" android:layout_width="fill_parent" android:layout_height="fill_parent"></TextView>
+	        	</LinearLayout>
+        	</LinearLayout>
+	       <LinearLayout android:orientation="vertical" android:layout_marginTop="16dp" android:layout_marginLeft="25dp" android:layout_marginRight="25dp" android:padding="2dp" android:layout_width="fill_parent" android:layout_height="wrap_content">
+	            <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+	            	<TextView android:textColor="#D68C15" android:gravity="bottom" android:textSize="12sp" android:text="@+string/store" android:layout_width="fill_parent" android:layout_height="fill_parent"></TextView>
+	        	</LinearLayout>
+	        	<LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+	            	<TextView android:id="@+id/store" android:textColor="#FFFFFF" android:textSize="18sp" android:layout_width="fill_parent" android:layout_height="fill_parent"></TextView>
+	        	</LinearLayout>
+        	</LinearLayout>
+        	<LinearLayout android:layout_marginTop="16dp" android:layout_marginLeft="25dp" android:layout_marginRight="25dp" android:padding="2dp" android:layout_width="fill_parent" android:layout_height="wrap_content">
+	            <LinearLayout android:layout_width="0dip" android:layout_weight="1" android:layout_height="fill_parent">
+	            	<TextView android:textColor="#D68C15" android:gravity="bottom" android:textSize="12sp" android:text="@+string/ean" android:layout_width="fill_parent" android:layout_height="fill_parent"></TextView>
+	        	</LinearLayout>
+	        	<LinearLayout android:layout_width="0dip" android:layout_weight="1" android:layout_height="fill_parent">
+	            	<TextView android:id="@+id/ean" android:gravity="right" android:textColor="#FFFFFF" android:textSize="18sp" android:layout_width="fill_parent" android:layout_height="fill_parent"></TextView>
+	        	</LinearLayout>
+        	</LinearLayout>
+        	<LinearLayout android:orientation="vertical" android:layout_marginTop="16dp" android:layout_marginLeft="25dp" android:layout_marginRight="25dp" android:padding="2dp" android:layout_width="fill_parent" android:layout_height="wrap_content">
+	            <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+	            	<TextView android:textColor="#D68C15" android:gravity="bottom" android:textSize="12sp" android:text="@+string/category" android:layout_width="fill_parent" android:layout_height="fill_parent"></TextView>
+	        	</LinearLayout>
+	        	<LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+	            	<TextView android:id="@+id/category" android:textColor="#FFFFFF" android:textSize="18sp" android:layout_width="fill_parent" android:layout_height="fill_parent"></TextView>
+	        	</LinearLayout>
+        	</LinearLayout>
+        	<LinearLayout android:orientation="vertical" android:layout_marginTop="16dp" android:layout_marginLeft="25dp" android:layout_marginRight="25dp" android:padding="2dp" android:layout_width="fill_parent" android:layout_height="wrap_content">
+	            <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+	            	<TextView android:textColor="#D68C15" android:gravity="bottom" android:textSize="12sp" android:text="@+string/contamination" android:layout_width="fill_parent" android:layout_height="fill_parent"></TextView>
+	        	</LinearLayout>
+	        	<LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+	            	<TextView android:id="@+id/contamination" android:textColor="#FFFFFF" android:textSize="18sp" android:layout_width="fill_parent" android:layout_height="fill_parent"></TextView>
+	        	</LinearLayout>
+        	</LinearLayout>
+        	<LinearLayout android:layout_marginTop="16dp" android:layout_marginLeft="25dp" android:layout_marginRight="25dp" android:padding="2dp" android:layout_width="fill_parent" android:layout_height="wrap_content">
+	        	<LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+	            	<TextView android:id="@+id/dlc" android:textColor="#FFFFFF" android:textSize="12sp" android:layout_width="fill_parent" android:layout_height="fill_parent"></TextView>
+	        	</LinearLayout>
+        	</LinearLayout>
+        	<LinearLayout android:background="@drawable/grey_gradient" android:layout_marginTop="16dp" android:layout_width="fill_parent" android:layout_height="wrap_content">
+	       		<TextView android:textColor="#FFFFFF" android:gravity="center" android:textSize="11sp" android:text="@string/disclaimer" android:layout_width="fill_parent" android:layout_height="fill_parent"></TextView>
+	       </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

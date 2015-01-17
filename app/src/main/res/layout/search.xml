@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background"
+    android:gravity="center_horizontal"
+    android:id="@+id/searchScreen"
+    >
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="4dp">
+	    <RelativeLayout android:layout_width="fill_parent" android:id="@+id/searchContainer" android:layout_height="wrap_content">
+	        <EditText android:layout_height="wrap_content"  android:layout_alignParentLeft="true" android:layout_alignParentTop="true" android:id="@+id/searchText" android:layout_width="fill_parent" android:layout_marginRight="50dp"></EditText>
+	        <Button android:onClick="search" android:layout_height="wrap_content" android:drawableLeft="@drawable/ic_btn_search" android:layout_alignParentTop="true" android:layout_width="wrap_content" android:id="@+id/searchButton" android:layout_alignParentRight="true"></Button>
+	    </RelativeLayout>
+	    <ListView android:id="@+id/searchResultsList" android:visibility="gone" android:layout_width="fill_parent" android:layout_below="@+id/searchContainer" android:layout_alignParentLeft="true" android:layout_height="fill_parent"></ListView>
+
+	    <RelativeLayout android:id="@+id/searchingContainer" android:layout_width="fill_parent" android:gravity="center_vertical|center_horizontal" android:layout_weight="1" android:layout_height="fill_parent">
+		    <LinearLayout android:layout_width="fill_parent" android:id="@+id/searchTextContainer" android:layout_height="wrap_content" android:gravity="center_vertical|center_horizontal">
+			    <TextView android:textColor="#ffffff" android:layout_width="wrap_content" android:id="@+id/textSearching" android:layout_height="wrap_content" android:text="@string/searching" android:textSize="24sp" android:textAppearance="?android:attr/textAppearanceLarge"></TextView>
+		    	<TextView android:textColor="#D68C15" android:layout_width="wrap_content" android:id="@+id/textDots" android:layout_height="wrap_content" android:text="@string/dots" android:textSize="24sp" android:textAppearance="?android:attr/textAppearanceLarge"></TextView>
+		    </LinearLayout>
+		    <ProgressBar android:layout_below="@+id/searchTextContainer" android:layout_centerHorizontal="true" android:id="@+id/progressBar" android:layout_height="30dp" android:layout_width="30dp"></ProgressBar>
+		</RelativeLayout>
+    	<RelativeLayout android:id="@+id/cancelContainer" android:gravity="center_horizontal" android:layout_width="fill_parent" android:layout_alignParentLeft="true" android:layout_weight="1"  android:layout_height="fill_parent">
+    		<Button android:onClick="cancel" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:text="@string/cancel" android:layout_width="wrap_content"></Button>
+    	</RelativeLayout>
+    	<RelativeLayout android:id="@+id/noResultsContainer" android:visibility="gone" android:gravity="center_horizontal|center_vertical" android:layout_width="fill_parent" android:layout_alignParentLeft="true" android:layout_weight="1"  android:layout_height="fill_parent">
+    		<LinearLayout android:layout_width="fill_parent" android:layout_marginBottom="10dp" android:id="@+id/noResultsTextContainer1" android:layout_height="wrap_content" android:gravity="center_vertical|center_horizontal">
+			    <TextView android:textColor="#ffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/no_results" android:textSize="24sp" android:textAppearance="?android:attr/textAppearanceLarge"></TextView>
+		    	<TextView android:textColor="#D68C15" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/dots" android:textSize="24sp" android:textAppearance="?android:attr/textAppearanceLarge"></TextView>
+		    </LinearLayout>
+		    <TextView android:textColor="#ffffff" android:padding="10dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/no_results_help" android:layout_below="@+id/noResultsTextContainer1" android:textSize="14sp"></TextView>
+    	</RelativeLayout>
+    	<RelativeLayout android:id="@+id/connectionErrorContainer" android:visibility="gone" android:gravity="center_horizontal|center_vertical" android:layout_width="fill_parent" android:layout_alignParentLeft="true" android:layout_weight="1"  android:layout_height="fill_parent">
+    		<LinearLayout android:layout_width="fill_parent" android:layout_marginBottom="10dp" android:id="@+id/noResultsTextContainer2" android:layout_height="wrap_content" android:gravity="center_vertical|center_horizontal">
+			    <TextView android:textColor="#ffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/connection_error" android:textSize="24sp" android:textAppearance="?android:attr/textAppearanceLarge"></TextView>
+		    	<TextView android:textColor="#D68C15" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/dots" android:textSize="24sp" android:textAppearance="?android:attr/textAppearanceLarge"></TextView>
+		    </LinearLayout>
+		    <TextView android:textColor="#ffffff" android:padding="10dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/connection_error_help" android:layout_below="@+id/noResultsTextContainer2" android:textSize="14sp"></TextView>
+    	</RelativeLayout>
+    </LinearLayout>
+</LinearLayout>
