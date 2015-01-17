@@ -1,2 +1,2 @@
-# GlutenVrijApp
-Gluten vrije producten app voor android
+# GlutenVrij App
+Gluten vrije producten app voor Android
