@@ -45,31 +45,38 @@ public class Search extends AsyncTask<Object, String, ArrayList<SearchResult>> {
 		if(response.getContentType().getValue().equals("application/x-json")) {
 			BufferedReader inputReader = null;
 			inputReader = new BufferedReader(new InputStreamReader(response.getContent()));
-			String resultString = inputReader.readLine();
+			String resultString = "";
 			JSONObject searchResult = null;
-			try {
-				searchResult = new JSONObject(resultString);
-				JSONArray resultArray = searchResult.getJSONArray("results");
-				//Found a result and using the spell checker to fix the word, display the word used to fix it
-				if(this.suggestion == true && resultArray.length()>0) {
-					result.add(new SearchResult(keyword));
-				}
-				for(int i = 0; i < resultArray.length() && i < 1000; i++) {
-					result.add(new SearchResult((String) resultArray.getJSONArray(i).get(0)
-							,(String) resultArray.getJSONArray(i).get(1)
-							,(String) resultArray.getJSONArray(i).get(2)
-							,(String) resultArray.getJSONArray(i).get(3)
-							,(Integer) resultArray.getJSONArray(i).get(4)
-							,(Integer) resultArray.getJSONArray(i).get(5)
-							,(String) resultArray.getJSONArray(i).get(6)
-							,(String) resultArray.getJSONArray(i).get(7)
-							,(String) resultArray.getJSONArray(i).get(8)
-							));
+			// Extract all the text from the request
+			StringBuilder resultStringBuilder=  new StringBuilder();
+			while ((resultString = inputReader.readLine()) != null)
+			{
+				resultStringBuilder.append(resultString);
+			}
+			resultString = resultStringBuilder.toString();
+			if(resultString != null) {
+				try {
+					searchResult = new JSONObject(resultString);
+					JSONArray resultArray = searchResult.getJSONArray("results");
+					//Found a result and using the spell checker to fix the word, display the word used to fix it
+					if (this.suggestion == true && resultArray.length() > 0) {
+						result.add(new SearchResult(keyword));
+					}
+					for (int i = 0; i < resultArray.length() && i < 1000; i++) {
+						result.add(new SearchResult((String) resultArray.getJSONArray(i).get(0)
+								, (String) resultArray.getJSONArray(i).get(1)
+								, (String) resultArray.getJSONArray(i).get(2)
+								, (String) resultArray.getJSONArray(i).get(3)
+								, (Integer) resultArray.getJSONArray(i).get(4)
+								, (Integer) resultArray.getJSONArray(i).get(5)
+								, (String) resultArray.getJSONArray(i).get(6)
+								, (String) resultArray.getJSONArray(i).get(7)
+								, (String) resultArray.getJSONArray(i).get(8)
+						));
 
+					}
+				} catch (JSONException e) {
 				}
-			} catch (JSONException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
 			}
 		}
 		return result;
@@ -82,11 +89,7 @@ public class Search extends AsyncTask<Object, String, ArrayList<SearchResult>> {
 		try {
 			result = search((Integer) parameters[0], (String) parameters[1]);
 		} catch (NumberFormatException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		} catch (URISyntaxException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		} catch (IOException e) {
 			result = SearchObserver.CONNECTION_ERROR;
 		}

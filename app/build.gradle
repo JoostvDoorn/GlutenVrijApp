@@ -18,6 +18,6 @@ android {
 }
 
 dependencies {
-    compile files('C:/Users/Joost/AndroidstudioProjects/glutenvrij/libs/EasyTracker.jar')
-    compile files('C:/Users/Joost/AndroidstudioProjects/glutenvrij/libs/libGoogleAnalytics.jar')
+    compile files('../libs/EasyTracker.jar')
+    compile files('../libs/libGoogleAnalytics.jar')
 }
