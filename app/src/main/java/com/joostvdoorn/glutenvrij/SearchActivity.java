@@ -20,7 +20,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 
-public class SearchActivity extends TrackedActivity implements SearchObserver, SpellCheckObserver, OnEditorActionListener {
+public class SearchActivity extends TrackedActivity implements SearchObserver, OnEditorActionListener {
 	
 
 	private static final int SETTINGS_ID = Menu.FIRST;
@@ -29,8 +29,7 @@ public class SearchActivity extends TrackedActivity implements SearchObserver, S
 	
 	private ArrayList<SearchResult> results = new ArrayList<SearchResult>();
 	private ListView list;
-	private Search search; 
-	private SpellCheck spellcheck;
+	private Search search;
 	private String keyword = ""; //Current active keyword
 	private int category = 0; //Current active category
 	private boolean suggestion = false;
@@ -97,10 +96,6 @@ public class SearchActivity extends TrackedActivity implements SearchObserver, S
 		else if(result == SearchObserver.CONNECTION_ERROR) {
 			connectionProblem();
 		}
-		else {
-			spellcheck = new SpellCheck();
-			spellcheck.execute(keyword,this);
-		}
 	}
 	public void search(View view) {
 
@@ -139,9 +134,6 @@ public class SearchActivity extends TrackedActivity implements SearchObserver, S
 		if(search != null) {
 			search.cancel(true);
 		}
-		if(spellcheck != null) {
-			spellcheck.cancel(true);
-		}
 		finish();
 	}
 	public void noResults() {
@@ -171,22 +163,6 @@ public class SearchActivity extends TrackedActivity implements SearchObserver, S
 		findViewById(R.id.noResultsContainer).setVisibility(View.GONE);
 		//Show the connection failed text
 		findViewById(R.id.connectionErrorContainer).setVisibility(View.VISIBLE);
-	}
-	@Override
-	public void notifySpelling(ArrayList<ArrayList<String>> result) {
-		if(result.size()>=1 && result.get(0).size()>=1 && suggestion == false) {
-			//Try a search for a misspelled word
-	        search = new Search(true);
-	        search.execute(category,result.get(0).get(0),this);
-	        suggestion = true;
-		}
-		else {
-			//Could not find any results or spelling suggestions
-			noResults();
-		}
-
-		//Clear reference to search task
-		search = null;
 	}
 
 	@Override
