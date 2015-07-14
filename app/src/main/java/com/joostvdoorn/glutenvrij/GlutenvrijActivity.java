@@ -1,6 +1,7 @@
 package com.joostvdoorn.glutenvrij;
 
-import com.google.android.apps.analytics.easytracking.TrackedActivity;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 import com.joostvdoorn.glutenvrij.scanner.CaptureActivity;
 import com.joostvdoorn.glutenvrij.scanner.PreferencesActivity;
 
@@ -20,18 +21,19 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.app.Activity;
 import android.widget.TextView.OnEditorActionListener;
 
 public class GlutenvrijActivity extends TrackedActivity implements View.OnClickListener, OnEditorActionListener {
-
+	protected static final String NAME = "Homescreen";
 	private static final int SETTINGS_ID = Menu.FIRST;
 	private static final int ABOUT_ID = Menu.FIRST + 1;
-	public static final String VERSION_NAME = "1.02";
+	public static final String VERSION_NAME = "1.03";
 	
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        super.onCreate(savedInstanceState, this.NAME);
 
         Window window = getWindow();
         window.setFormat(PixelFormat.RGBA_8888);
@@ -43,19 +45,8 @@ public class GlutenvrijActivity extends TrackedActivity implements View.OnClickL
         searchButton.setOnClickListener(this);
         searchText.setOnEditorActionListener(this);
         PreferenceManager.setDefaultValues(this, R.xml.preferences, true);
-        
-        /*setListAdapter(new ArrayAdapter<String>(this, R.layout.list_item, names));
 
-        ListView lv = getListView();
-        //Setting this to true allows the user to filter the results by typing
-        lv.setTextFilterEnabled(true);
-		
-        try {
-			printResult();
-		} catch (Exception e) {
-			names.clear();
-			names.add(e.getMessage());
-		}*/
+
     }
 
     public void scanBarcodes(View view) {

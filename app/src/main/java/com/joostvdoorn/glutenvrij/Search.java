@@ -18,6 +18,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 public class Search extends AsyncTask<Object, String, ArrayList<SearchResult>> {
 
@@ -39,7 +40,8 @@ public class Search extends AsyncTask<Object, String, ArrayList<SearchResult>> {
 	
 	public ArrayList<SearchResult> search(int category, String keyword) throws URISyntaxException, IOException {
 		ArrayList<SearchResult> result = new ArrayList<SearchResult>();
-        request = new HttpGet(new URI("http://www.joostvandoorn.com/glutenvrij/search.php?opZoeken="+category+"&zoektermen="+URLEncoder.encode(keyword)));
+		String requestString = "http://www.joostvandoorn.com/glutenvrij/search.php?opZoeken="+category+"&zoektermen="+URLEncoder.encode(keyword);
+		request = new HttpGet(new URI(requestString));
 		HttpEntity response = null;
 		response = httpClient.execute(request).getEntity();
 		if(response.getContentType().getValue().equals("application/x-json")) {

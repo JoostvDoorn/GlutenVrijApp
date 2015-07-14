@@ -16,8 +16,7 @@
 
 package com.joostvdoorn.glutenvrij.scanner;
 
-import com.google.android.apps.analytics.easytracking.EasyTracker;
-import com.google.android.apps.analytics.easytracking.TrackedActivity;
+import com.joostvdoorn.glutenvrij.TrackedActivity;
 import com.joostvdoorn.glutenvrij.scanner.PreferencesActivity;
 import com.joostvdoorn.glutenvrij.GlutenvrijActivity;
 import com.joostvdoorn.glutenvrij.R;
@@ -71,6 +70,7 @@ import java.util.Vector;
  */
 public final class CaptureActivity extends TrackedActivity implements SurfaceHolder.Callback, SearchObserver {
 
+  protected static final String NAME = "Barcode scanner";
   private static final String TAG = CaptureActivity.class.getSimpleName();
 
   private static final int SETTINGS_ID = Menu.FIRST;
@@ -116,7 +116,7 @@ public final class CaptureActivity extends TrackedActivity implements SurfaceHol
 
   @Override
   public void onCreate(Bundle icicle) {
-    super.onCreate(icicle);
+    super.onCreate(icicle, this.NAME);
 
     Window window = getWindow();
     window.setFormat(PixelFormat.RGBA_8888);
@@ -257,7 +257,7 @@ public final class CaptureActivity extends TrackedActivity implements SurfaceHol
     inactivityTimer.onActivity();
     lastResult = rawResult;
     beepManager.playBeepSoundAndVibrate();
-    EasyTracker.getTracker().trackEvent("scanner","search",""+rawResult.getText(), 0);
+    this.trackEvent("scanner","search",""+rawResult.getText(), 0);
     Toast.makeText(this, ""+rawResult.getText(), Toast.LENGTH_SHORT).show();
 
     new Search().execute(1,rawResult.getText(),this);
@@ -353,7 +353,7 @@ public final class CaptureActivity extends TrackedActivity implements SurfaceHol
 @Override
 public void notify(ArrayList<SearchResult> result) {
 	if(result.size()>1) {
-	    EasyTracker.getTracker().trackEvent("scanner","result-multi",result.get(0).getEan(), result.size());
+	    this.trackEvent("scanner","result-multi",result.get(0).getEan(), result.size());
 		//Show an more advance interface for multiple results
     	Intent myIntent = new Intent(getBaseContext(), SearchActivity.class);
     	myIntent.putExtra("com.joostvdoorn.glutenvrij.SearchValue", result.get(0).getEan());
@@ -371,7 +371,7 @@ public void notify(ArrayList<SearchResult> result) {
 		else {
 			findViewById(R.id.scannerResultContainer).setBackgroundResource(R.drawable.grey_gradient);
 		}
-	    EasyTracker.getTracker().trackEvent("scanner","result",""+result.get(0).getName(), 1);
+	    this.trackEvent("scanner","result",""+result.get(0).getName(), 1);
 		((TextView) findViewById(R.id.scannerResult)).setText(result.get(0).getName());
 		String line = "";
 		line += result.get(0).getStore() + " - ";
@@ -402,7 +402,7 @@ public void notify(ArrayList<SearchResult> result) {
 		((TextView) findViewById(R.id.resultInfoLine)).setText(line);
 	}
 	else {
-	    EasyTracker.getTracker().trackEvent("scanner","result-none","", 0);
+	    this.trackEvent("scanner","result-none","", 0);
 		findViewById(R.id.scannerResultContainer).setVisibility(View.VISIBLE);
 		findViewById(R.id.scannerResultContainer).setBackgroundResource(R.drawable.yellow_gradient);
 		((TextView) findViewById(R.id.scannerResult)).setText(R.string.barcode_not_found);

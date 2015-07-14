@@ -2,8 +2,6 @@ package com.joostvdoorn.glutenvrij;
 
 import java.util.ArrayList;
 
-import com.google.android.apps.analytics.easytracking.EasyTracker;
-import com.google.android.apps.analytics.easytracking.TrackedActivity;
 import com.joostvdoorn.glutenvrij.scanner.PreferencesActivity;
 
 import android.app.AlertDialog;
@@ -27,6 +25,7 @@ public class SearchActivity extends TrackedActivity implements SearchObserver, S
 
 	private static final int SETTINGS_ID = Menu.FIRST;
 	private static final int ABOUT_ID = Menu.FIRST + 1;
+	protected static final String NAME = "Search";
 	
 	private ArrayList<SearchResult> results = new ArrayList<SearchResult>();
 	private ListView list;
@@ -40,7 +39,7 @@ public class SearchActivity extends TrackedActivity implements SearchObserver, S
     @SuppressWarnings("unchecked")
 	@Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+		super.onCreate(savedInstanceState, this.NAME);
         Window window = getWindow();
         window.setFormat(PixelFormat.RGBA_8888);
         
@@ -66,7 +65,7 @@ public class SearchActivity extends TrackedActivity implements SearchObserver, S
         	search = new Search();
         	search.execute(category,keyword,this);
     		keyword = ((EditText) findViewById(R.id.searchText)).getText().toString();
-    		EasyTracker.getTracker().trackEvent("search","search",""+keyword, 0);
+    		this.trackEvent("search","search",""+keyword, 0);
         }
         else {
         	notify((ArrayList<SearchResult>) data);
@@ -112,10 +111,10 @@ public class SearchActivity extends TrackedActivity implements SearchObserver, S
 			if(search != null) {
 				search.cancel(true);
 				search = null;
-				EasyTracker.getTracker().trackEvent("search","correction",""+keyword, 0);
+				this.trackEvent("search","correction",""+keyword, 0);
 			}
 			else {
-				EasyTracker.getTracker().trackEvent("search","search",""+keyword, 0);
+				this.trackEvent("search","search",""+keyword, 0);
 			}
 			//Show the searching text
 			findViewById(R.id.searchingContainer).setVisibility(View.VISIBLE);
@@ -136,7 +135,7 @@ public class SearchActivity extends TrackedActivity implements SearchObserver, S
 	}
 	public void cancel(View view) {
 		keyword = ((EditText) findViewById(R.id.searchText)).getText().toString();
-		EasyTracker.getTracker().trackEvent("search","cancel",""+keyword, 0);
+		this.trackEvent("search","cancel",""+keyword, 0);
 		if(search != null) {
 			search.cancel(true);
 		}
@@ -147,7 +146,7 @@ public class SearchActivity extends TrackedActivity implements SearchObserver, S
 	}
 	public void noResults() {
 		keyword = ((EditText) findViewById(R.id.searchText)).getText().toString();
-		EasyTracker.getTracker().trackEvent("search","empty",""+keyword, 0);
+		this.trackEvent("search","empty",""+keyword, 0);
 		//Hide the list
 		findViewById(R.id.searchResultsList).setVisibility(View.GONE);
 		findViewById(R.id.searchScreen).setBackgroundResource(R.drawable.background);

@@ -1,6 +1,5 @@
 package com.joostvdoorn.glutenvrij;
 
-import com.google.android.apps.analytics.easytracking.TrackedActivity;
 import com.joostvdoorn.glutenvrij.scanner.PreferencesActivity;
 
 import android.app.AlertDialog;
@@ -14,7 +13,8 @@ import android.view.Window;
 import android.widget.TextView;
 
 public class SearchResultActivity extends TrackedActivity {
-	
+
+	protected static final String NAME = "Search result screen";
 	private static final int SETTINGS_ID = Menu.FIRST;
 	private static final int ABOUT_ID = Menu.FIRST + 1;
 
@@ -23,7 +23,7 @@ public class SearchResultActivity extends TrackedActivity {
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+		super.onCreate(savedInstanceState, this.NAME);
 
         Window window = getWindow();
         window.setFormat(PixelFormat.RGBA_8888);

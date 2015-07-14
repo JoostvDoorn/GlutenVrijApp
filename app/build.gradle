@@ -1,12 +1,14 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+
 android {
     compileSdkVersion 21
     buildToolsVersion "21.1.2"
 
     defaultConfig {
         applicationId "com.joostvdoorn.glutenvrij"
-        minSdkVersion 7
-        targetSdkVersion 7
+        minSdkVersion 9
+        targetSdkVersion 9
     }
 
     buildTypes {
@@ -18,6 +20,6 @@ android {
 }
 
 dependencies {
-    compile files('../libs/EasyTracker.jar')
-    compile files('../libs/libGoogleAnalytics.jar')
+    compile fileTree(dir: '../libs', include: ['*.jar'])
+    compile 'com.google.android.gms:play-services-analytics:7.0.0'
 }
