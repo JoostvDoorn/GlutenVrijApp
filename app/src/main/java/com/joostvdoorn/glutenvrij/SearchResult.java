@@ -82,6 +82,9 @@ public class SearchResult implements Parcelable {
 	public int getLactoseInfo() {
 		return lactoseInfo;
 	}
+	public String getBsmString() {
+		return bsmToString(bsm);
+	}
 	public int getBsm() {
 		return bsm;
 	}
@@ -102,6 +105,36 @@ public class SearchResult implements Parcelable {
 	}
 	public int getSource() {
 		return source;
+	}
+	private String bsmToString(int bsm) {
+		switch (bsm) {
+			case BSM_BG0:
+				return "BG0";
+			case BSM_BG1:
+				return "BG1";
+
+			case BSM_BG2:
+				return "BG2";
+
+			case BSM_BG3:
+				return "BG3";
+
+			case BSM_BG4:
+				return "BG4";
+
+			case BSM_BL1:
+				return "BL1";
+
+			case BSM_NG:
+				return "NG";
+			case BSM_MGD:
+				return "MGD";
+			case BSM_GA:
+				return "GA";
+			case BSM_UNKNOWN:
+				return "";
+		}
+		return "";
 	}
 	private int bsmToInt(String bsm) {
 		if(bsm.equals("BG0")) {

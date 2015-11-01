@@ -399,6 +399,8 @@ public void notify(ArrayList<SearchResult> result) {
 				line += res.getString(R.string.starch_no_data);
 				break;
 		}
+        String bsmString = result.get(0).getBsmString();
+        line +=  bsmString.length() > 0 ? " - " + bsmString : "";
 		((TextView) findViewById(R.id.resultInfoLine)).setText(line);
 	}
 	else {

@@ -73,6 +73,8 @@ public class SearchAdapter extends ArrayAdapter<SearchResult> implements OnItemC
 					line += res.getString(R.string.starch_no_data);
 					break;
 			}
+			String bsmString = result.get(position).getBsmString();
+			line +=  bsmString.length() > 0 ? " - " + bsmString : "";
 			((TextView) convertView.findViewById(R.id.resultInfoLine)).setText(line);
 			resultView = convertView;
 		}
