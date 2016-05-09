@@ -28,7 +28,7 @@ public class GlutenvrijActivity extends TrackedActivity implements View.OnClickL
 	protected static final String NAME = "Homescreen";
 	private static final int SETTINGS_ID = Menu.FIRST;
 	private static final int ABOUT_ID = Menu.FIRST + 1;
-	public static final String VERSION_NAME = "1.03";
+	public static final String VERSION_NAME = "1.04";
 	
     /** Called when the activity is first created. */
     @Override
