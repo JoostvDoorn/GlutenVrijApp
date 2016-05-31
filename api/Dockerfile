@@ -8,14 +8,12 @@ RUN luarocks install https://raw.githubusercontent.com/benglard/waffle/master/wa
 
 RUN mkdir -p /etc/my_init.d
 RUN mkdir -p /home/GlutenVrijApp/
-ADD start.sh /etc/my_init.d/startServer.sh
+RUN awk ' BEGIN { print "#!/bin/sh\nth /home/GlutenVrijApp/api/server.lua --host 0.0.0.0 --port 3111" } ' > /etc/my_init.d/startServer.sh
 RUN chmod 777 /etc/my_init.d/startServer.sh
+RUN cat /etc/my_init.d/startServer.sh
 
 WORKDIR /home/
 RUN git clone https://github.com/JoostvDoorn/GlutenVrijApp
 WORKDIR /home/GlutenVrijApp/api
 
-
-# private expose
-EXPOSE 80
-EXPOSE 443
+EXPOSE 3111
