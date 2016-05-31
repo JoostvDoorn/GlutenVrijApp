@@ -1,6 +1,6 @@
 local htmlparser = require("htmlparser")
 local http = require('socket.http')
-local app = require('waffle')
+local app = require('waffle').CmdLine()
 
 app.get('/search.php', function(req, res)
 	local query = req.url.args.zoektermen
@@ -46,5 +46,5 @@ app.get('/search.php', function(req, res)
 	end
     res.json({api_version=0.2, results=results})
 end)
-
-app.listen({host='127.0.0.1', port=80})
+-- 127.0.0.1
+app.listen()
