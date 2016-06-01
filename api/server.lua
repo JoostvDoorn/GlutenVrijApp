@@ -2,7 +2,7 @@ local htmlparser = require("htmlparser")
 local http = require('socket.http')
 local app = require('waffle').CmdLine()
 
-app.get('/search.php', function(req, res)
+local search = function(req, res)
 	local query = req.url.args.zoektermen
 	local queryType = req.url.args.opZoeken
 	local queryPage = req.url.args.page or 1
@@ -45,6 +45,9 @@ app.get('/search.php', function(req, res)
 		end
 	end
     res.json({api_version=0.2, results=results})
-end)
+end
+
+app.get('/search.php', search)
+app.get('/glutenvrij/search.php', search)
 -- 127.0.0.1
 app.listen()
