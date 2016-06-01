@@ -4,8 +4,8 @@ local app = require('waffle').CmdLine()
 
 local search = function(req, res)
 	local query = req.url.args.zoektermen
-	local queryType = req.url.args.opZoeken
-	local queryPage = req.url.args.page or 1
+	local queryType = tonumber(req.url.args.opZoeken)
+	local queryPage = tonumber(req.url.args.page) or 0
 	local queryEan = ""
 	if query == nil then
 		res.send("Error")
@@ -15,12 +15,25 @@ local search = function(req, res)
 		queryEan = query 
 		query = ""
 	end
-	local body, c, l, h = http.request('http://livaad.nl/app/loaddata.php?artq='..query..'&eanq='..queryEan..'&producentq=&p='..queryPage)
+  local url = {'http://livaad.nl/app/loaddata.php', '?artq=', query, '&eanq=', queryEan, '&producentq=&p=', queryPage}
+  if queryPage < 1 then
+    url[1] = 'http://livaad.nl/database/'
+  end
+	local body, c, l, h = http.request(table.concat(url, ""))
 	local root = htmlparser.parse(body)
+  if queryPage < 1 then
+    local dataContainer = root:select("#data-container")
+    if #dataContainer>=1 then
+      root = htmlparser.parse(dataContainer[1]:getcontent())
+    else
+      res.send("Error")
+    end
+  end
 	local products = root:select(".panel")
 
 	local results = {}
 	-- Get all products
+  print(#products)
 	for i=1,#products do
 		local header = products[i](".panel-heading")
 		if #header >= 1 then
@@ -33,8 +46,8 @@ local search = function(req, res)
 				local k, v = unpack(rows[i]('div'))
 				attributes[k:getcontent():gsub("[( |:)]", "")] = v:getcontent()
 			end
-			local bsm = "6" -- By default TODO
-			local source = "1" -- By default TODO
+			local bsm = "" -- By default TODO
+			local source = "" -- By default TODO
 			-- 1 is free, 2 is contains
 			local _, starch = attributes["Tarwezetmeel"]:gsub("vrij", "vrij")
 			starch = starch > 0 and 1 or 2
