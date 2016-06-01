@@ -33,7 +33,6 @@ local search = function(req, res)
 
 	local results = {}
 	-- Get all products
-  print(#products)
 	for i=1,#products do
 		local header = products[i](".panel-heading")
 		if #header >= 1 then
@@ -53,7 +52,7 @@ local search = function(req, res)
 			starch = starch > 0 and 1 or 2
 			local _, lactose = attributes["Lactose"]:gsub("vrij", "vrij")
 			lactose = lactose > 0 and 1 or 2
-			local datum = string.gsub(attributes["Checkdatum"], '<(.*)>(.*)</(.*)>', ""):gsub(" ", "")
+			local datum = string.gsub(attributes["Checkdatum"], '<(.*)>(.*)</(.*)>', ""):gsub(" ", ""):gsub("-201", "") -- TODO: Fix in app
 			results[#results+1] = {name, attributes["EAN"], brand, attributes["Soort"], starch, lactose, bsm, datum, source}
 		end
 	end
