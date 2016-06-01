@@ -33,8 +33,8 @@ local search = function(req, res)
 				local k, v = unpack(rows[i]('div'))
 				attributes[k:getcontent():gsub("[( |:)]", "")] = v:getcontent()
 			end
-			local bsm = 6 -- By default TODO
-			local source = 1 -- By default TODO
+			local bsm = "6" -- By default TODO
+			local source = "1" -- By default TODO
 			-- 1 is free, 2 is contains
 			local _, starch = attributes["Tarwezetmeel"]:gsub("vrij", "vrij")
 			starch = starch > 0 and 1 or 2
