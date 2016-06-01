@@ -54,6 +54,7 @@ local search = function(req, res)
       local _, lactose = attributes["Lactose"]:gsub("vrij", "vrij")
       lactose = lactose > 0 and 1 or 2
       local datum = string.gsub(attributes["Checkdatum"], '<(.*)>(.*)</(.*)>', ""):gsub(" ", ""):gsub("-201", "") -- TODO: Fix in app
+      datum = datum:sub(3,3) .. datum:sub(1,2) -- Last number year, month
       results[#results+1] = {name, attributes["EAN"], brand, attributes["Soort"], starch, lactose, bsm, datum, source}
     end
   end
