@@ -5,6 +5,7 @@ RUN luarocks install luasocket
 RUN luarocks install https://raw.githubusercontent.com/msva/lua-htmlparser/master/htmlparser-scm-0.rockspec
 RUN luarocks install https://raw.githubusercontent.com/benglard/htmlua/master/htmlua-scm-1.rockspec
 RUN luarocks install https://raw.githubusercontent.com/benglard/waffle/master/waffle-scm-1.rockspec
+RUN luarocks install json
 
 RUN mkdir -p /etc/my_init.d
 RUN mkdir -p /home/GlutenVrijApp/
