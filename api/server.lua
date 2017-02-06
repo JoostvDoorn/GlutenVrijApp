@@ -72,5 +72,7 @@ end
 
 app.get('/search.php', search)
 app.get('/glutenvrij/search.php', search)
+app.get('/glutenvrij/search/', search)
+app.options('/glutenvrij/search/', search)
 -- 127.0.0.1
 app.listen()
