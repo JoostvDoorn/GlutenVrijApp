@@ -4,6 +4,7 @@ local json = require('json')
 local app = require('waffle').CmdLine()
 
 local search = function(req, res)
+  res.header('Access-Control-Allow-Origin', '*')
   local query = req.url.args.zoektermen
   local queryType = tonumber(req.url.args.opZoeken)
   local queryPage = tonumber(req.url.args.page) or 0
